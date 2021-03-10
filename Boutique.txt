@@ -1,0 +1,6 @@
+nom : tenons, cm, prix
+
+plaque verte : (32,32) (25,25) 7.99
+plaque bleue : (32,32) (25,25) 7.99
+plaque blanche : (32,32) (25,25) 7.99
+plaque grise : (48,48) (38,38) 14.99
