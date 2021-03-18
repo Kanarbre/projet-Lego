@@ -58,7 +58,7 @@ class Table_lego:
 		
 		#dessin de la table et de la plaque
 		self.table=None
-		self.L=[]
+		self.L=[] #tous les elementw ajouté au cnavas pour pouvoir les supprimer après
 		
 		self.tk.mainloop()
 		
@@ -86,7 +86,7 @@ class Table_lego:
 	
 		
 		# objet nécessaire
-		nombre_plaque=max(lon_plaque,lar_plaque)
+		nombre_plaque=lon_plaque*lar_plaque
 		
 		
 		self.plaque_lab.destroy()
@@ -108,6 +108,17 @@ class Table_lego:
 		"""créer la table"""
 		self.table=self.canvas.create_rectangle(350-lo,300-la,350+lo,300+la,fill="green")
 		self.table
+
+		"""créer la séparation des plaques"""
+	
+		for i in range (floor(lon_table/32)):
+			ligne=self.canvas.create_line(350-lo+(i+1)*32*2*pixel,300-la,350-lo+(i+1)*32*2*pixel,300+la,width=2,fill="blue")
+			ligne
+			self.L.append(ligne)
+		for j in range (floor(lar_table/32)):
+			ligne=self.canvas.create_line(350-lo,300-la+(j+1)*32*2*pixel,350+lo,300-la+(j+1)*32*2*pixel,width=2,fill="blue")
+			ligne
+			self.L.append(ligne)
 		
 		"""crééer les tenons"""
 		a=350-lo+pixel
